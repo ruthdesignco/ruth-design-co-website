@@ -13,14 +13,14 @@ const work = [
   {
     client: "McKinsey & Company / Medtronic",
     headline: "Redesigning the surgical planning experience for a global MedTech leader",
-    caseStudyHref: "#",
+    caseStudyHref: "/case-studies/Case Studies - Medtronic.pdf",
     description:
       "Medtronic's Surgeon Hub platform supported complex spinal surgical planning across surgeons, lab engineers, and OR staff — but fragmented communication, poor mobile performance, and disjointed data systems were creating friction at every step of the care continuum. Working embedded within a McKinsey engagement team, we led all design efforts: qualitative research across 13 surgeons and 6 lab engineers at academic hospitals, private practices, and large hospital systems; client ideation workshops; journey mapping across the full pre-op to post-op arc; and high-fidelity prototyping through to a tested, approved UI. The result was a mobile-first redesign of Surgeon Hub that unified the clinical workflow, reduced cognitive load for front-line staff, and established the UX and design system architecture to support platform scaling.",
   },
   {
     client: "McKinsey & Company / Teck Resources Limited",
     headline: "Building an AI maintenance advisor for a major mining operation",
-    caseStudyHref: "#",
+    caseStudyHref: "/case-studies/Case Studies - Teck Mining.pdf",
     description:
       "A major generative AI use case: a conversational AI copilot for maintenance workers and technicians at a large-scale mining site, designed to reduce equipment downtime and eliminate the manual, fragmented workflows that slowed diagnosis and repair. Embedded as the design lead on a five-week McKinsey engagement, we owned the full design process — qualitative research with maintenance workers, supervisors, and operations personnel; journey mapping across awareness, diagnosis, logistics, and repair phases; internal ideation sessions with data scientists and engineers; and the design and prototyping of the AI tool interface itself. The proof of concept was presented to the board of directors and unanimously approved for development. It entered engineering in Q4 2023.",
   },
@@ -53,7 +53,7 @@ const work = [
               {entry.headline}
             </p>
             {entry.caseStudyHref && (
-              <a href={entry.caseStudyHref} class="inline-block mt-4 font-sans text-sm text-accent-500 hover:underline">
+              <a href={entry.caseStudyHref} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 font-sans text-sm text-accent-500 hover:underline">
                 View case study →
               </a>
             )}
