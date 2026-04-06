@@ -1,0 +1,23 @@
+---
+description: Coordinate astro.config.mjs and src/content.config.ts only when behavior or collections change
+globs:
+  - astro.config.*
+  - src/content.config.ts
+alwaysApply: false
+---
+
+# Astro config ↔ content config
+
+## Files
+
+- `astro.config.mjs` — `site` URL, Vite plugin `@tailwindcss/vite`, `integrations: [sitemap(), mdx()]`, markdown/Shiki options.
+- `src/content.config.ts` — content collection definitions (`glob` loaders, Zod schemas, `image()`).
+
+## Rules
+
+- **`site`:** Changing production domain affects `astro` site, sitemap (via `@astrojs/sitemap`), and anything using `context.site` (e.g. `src/pages/rss.xml.js`). Update placeholder URLs in head components if you replace them globally.
+- **Collections:** Any new `defineCollection` must match real folders under `src/content/` and have corresponding pages in `src/pages/` with `getStaticPaths`.
+- **Do not** change schema fields lightly: downstream layouts (`src/layouts/*.astro`) and cards depend on exact shapes defined here.
+- **RSS:** If posts move or collection names change, update `src/pages/rss.xml.js` so the feed source matches the real content (template glob under `src/pages/blog/` vs Markdown in `src/content/posts/`).
+
+When editing both files in one task, verify `npm run build` succeeds and all collection routes still generate.

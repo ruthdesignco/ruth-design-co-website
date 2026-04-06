@@ -1,0 +1,33 @@
+---
+description: Aubergine markdown frontmatter — match Zod in src/content.config.ts; preserve image()
+globs:
+  - src/content/**/*.md
+alwaysApply: false
+---
+
+# Content collections (`src/content/`)
+
+Schemas live in `src/content.config.ts` (Zod from `astro/zod`, `image()` for assets).
+
+## Collections and required frontmatter
+
+| Collection | Folder | Required fields |
+|------------|--------|-----------------|
+| `team` | `src/content/team/` | `name`, `role`, `intro`, `education` (string array), `experience` (string array), `avatar.url`, `avatar.alt` |
+| `services` | `src/content/services/` | `service`, `description` |
+| `work` | `src/content/work/` | `launchDate`, `client`, `work`, `description`, `logo.url`, `logo.alt` |
+| `legal` | `src/content/legal/` | `page`, `pubDate` |
+| `posts` | `src/content/posts/` | `title`, `pubDate`, `description`, `image.url`, `image.alt`, `tags` (string array) |
+
+## Templates (copy an existing file)
+
+- `src/content/posts/1.md`, `src/content/work/1.md`, `src/content/team/1.md`, `src/content/services/web-dev.md`, `src/content/legal/terms.md`
+
+## Images
+
+- Use paths Astro’s content layer accepts with `image()` (e.g. under `src/images/` as in existing entries). Do not switch to broken relative paths without checking `astro:assets` / layout usage (`Image` components expect valid sources).
+
+## Discipline
+
+- New required keys → update `src/content.config.ts` **and** all layouts/cards that read that collection’s `data`.
+- Entry **id** (URL segment) comes from the filename / glob loader — keep names URL-safe if you care about slugs (`/blog/posts/my-post`, `/legal/terms`, etc.).

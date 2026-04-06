@@ -1,0 +1,63 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+const work = [
+  {
+    client: "Walmart",
+    headline: "Enterprise AI governance at scale",
+    description:
+      "As AI agents proliferated across business units, Walmart needed a coherent system — not a patchwork of individual deployments. We led the design and standardization of the AI patterns, governance frameworks, and guardrails now used company-wide, including the protocol infrastructure that allows individual employees to spin up and deploy agents at scale.",
+  },
+  {
+    client: "McKinsey & Company / Medtronic",
+    headline: "Redesigning the surgical planning experience for a global MedTech leader",
+    description:
+      "Medtronic's Surgeon Hub platform supported complex spinal surgical planning across surgeons, lab engineers, and OR staff — but fragmented communication, poor mobile performance, and disjointed data systems were creating friction at every step of the care continuum. Working embedded within a McKinsey engagement team, we led all design efforts: qualitative research across 13 surgeons and 6 lab engineers at academic hospitals, private practices, and large hospital systems; client ideation workshops; journey mapping across the full pre-op to post-op arc; and high-fidelity prototyping through to a tested, approved UI. The result was a mobile-first redesign of Surgeon Hub that unified the clinical workflow, reduced cognitive load for front-line staff, and established the UX and design system architecture to support platform scaling.",
+  },
+  {
+    client: "McKinsey & Company / Teck Mining",
+    headline: "Building an AI maintenance advisor for a major mining operation",
+    description:
+      "A major generative AI use case: a conversational AI copilot for maintenance workers and technicians at a large-scale mining site, designed to reduce equipment downtime and eliminate the manual, fragmented workflows that slowed diagnosis and repair. Embedded as the design lead on a five-week McKinsey engagement, we owned the full design process — qualitative research with maintenance workers, supervisors, and operations personnel; journey mapping across awareness, diagnosis, logistics, and repair phases; internal ideation sessions with data scientists and engineers; and the design and prototyping of the AI tool interface itself. The proof of concept was presented to the board of directors and unanimously approved for development. It entered engineering in Q4 2023.",
+  },
+];
+---
+
+<section id="work" class="bg-[#0a0a09] scroll-mt-24">
+  <Wrapper variant="standard" class="py-32">
+    <div data-aos="fade-up" data-aos-duration="2000">
+      <p class="text-xs font-sans font-normal uppercase tracking-widest text-accent-500 mb-6">
+        Selected Work
+      </p>
+      <Text tag="h2" variant="displayMD" class="text-[#f0ede8] font-display">
+        Problems we've solved.
+      </Text>
+    </div>
+
+    <div class="mt-16 border-t border-white/[0.08]">
+      {work.map((entry) => (
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-16 py-12 border-b border-white/[0.08]"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <div class="md:col-span-1">
+            <h3 class="font-display text-xl text-[#f0ede8] leading-snug">
+              {entry.client}
+            </h3>
+            <p class="font-sans font-medium text-sm text-[#a8a89f] mt-2 leading-snug">
+              {entry.headline}
+            </p>
+          </div>
+          <div class="md:col-span-2">
+            <p class="font-sans font-light text-base text-[#a8a89f] leading-relaxed">
+              {entry.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Wrapper>
+</section>

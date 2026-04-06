@@ -1,0 +1,33 @@
+---
+description: Aubergine src/pages — routing layouts, dynamic segments, BaseLayout usage
+globs:
+  - src/pages/**/*
+alwaysApply: false
+---
+
+# Pages and routing (`src/pages/`)
+
+## Layouts
+
+- **Default shell:** Most marketing pages use `BaseLayout` from `src/layouts/BaseLayout.astro` (nav, footer, search, AOS/Tilt). Pass `hideNav` / `hideFooter` when mirroring auth pages like `sign-in.astro` / `sign-up.astro`.
+- **Per-type shells:** `BlogLayout`, `WorkLayout`, `TeamLayout`, `ServicesLayout`, `LegalLayout` wrap `BaseLayout` or inner structure — pass `frontmatter={entry.data}` when matching existing dynamic routes.
+
+## Dynamic routes
+
+- **`[...slug].astro`:** `getStaticPaths` uses `getCollection(...)` and `params: { slug: entry.id }` for **`work`**, **`team`**, **`services`**, **`legal`**, and **`posts`** (under `blog/posts/`).
+- **Blog tags:** `blog/tags/[tag].astro` — `tag` is a string from `posts` frontmatter `tags`; URLs like `/blog/tags/webdesign`.
+
+## URL reference (this theme)
+
+- Posts: `/blog/posts/<id>`
+- Tags: `/blog/tags`, `/blog/tags/<tag>`
+- Work: `/work`, `/work/<id>`
+- Team: `/team`, `/team/<id>`
+- Services: `/services/<id>` (listing lives on homepage `#services`, not a separate index route)
+- Legal: `/legal/<id>`
+- System kit: `/system/*`
+- RSS: `rss.xml.js` → `/rss.xml` (verify feed `glob` matches where posts actually live)
+
+## Edits
+
+- When adding a new **routable** collection, add both **`src/content.config.ts`** and a **`getStaticPaths`** page under `src/pages/`, plus a layout if needed — keep the same `getCollection` + `render(entry)` pattern as `legal/[...slug].astro`.

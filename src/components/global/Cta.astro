@@ -1,0 +1,33 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<section>
+  <Wrapper class="py-24">
+    <div class="text-center lg:mx-auto">
+      <Text tag="h3" variant="displayXL" class="text-white font-display">
+        Apply now and we will let you know <span class="md:block text-base-500"
+          >if we are the right fit for you in 48h.</span
+        >
+      </Text>
+      <Text tag="p" variant="textBase" class="mt-5 text-base-300 text-center">
+        Clean design and well craftwed websites are waiting for you.
+      </Text>
+    </div>
+    <div class="flex flex-wrap gap-3 mt-12 justify-center">
+      <Button
+        href="#pricing"
+        size="lg"
+        variant="accent"
+        title="#_"
+        aria-label="#_">See alll plans</Button
+      >
+      <Button href="/work" size="lg" variant="muted" title="#_" aria-label="#_"
+        >Our work</Button
+      >
+    </div>
+  </Wrapper>
+</section>

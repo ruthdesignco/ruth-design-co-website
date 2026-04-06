@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "tailwind-scrollbar-hide";
+
+@theme {
+  /* Typography */
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Instrument Serif", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  /* Colors */
+  /* base shades — cream (#f8f6f1) → near-black (#1a1a18) */
+  --color-base-50: #f8f6f1;
+  --color-base-100: #f0ede5;
+  --color-base-200: #e2e0d8;
+  --color-base-300: #ccc9bf;
+  --color-base-400: #a8a59b;
+  --color-base-500: #857f73;
+  --color-base-600: #6b6b65;
+  --color-base-700: #4e4e49;
+  --color-base-800: #33332f;
+  --color-base-900: #1a1a18;
+  --color-base-950: #0d0d0c;
+
+  /* accent shades — #00FFB3 green */
+  --color-accent-50: #e6fff8;
+  --color-accent-100: #b3ffe9;
+  --color-accent-200: #80ffd9;
+  --color-accent-300: #4dffca;
+  --color-accent-400: #1affba;
+  --color-accent-500: #00FFB3;
+  --color-accent-600: #00cc8f;
+  --color-accent-700: #00996b;
+  --color-accent-800: #006647;
+  --color-accent-900: #003324;
+  --color-accent-950: #001a12;
+  /* Shadow */
+  --shadow-big: 0px 7px 32px rgb(0 0 0 / 35%);
+  --shadow-massive: 0px 64px 64px rgba(0, 0, 0, 0.15),
+    0px 32px 32px rgba(0, 0, 0, 0.15), 0px 16px 16px rgba(0, 0, 0, 0.15),
+    0px 8px 8px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);
+  /* Border Radious */
+  --border-radius-4xl: 2rem;
+  --border-radius-5xl: 3rem;
+  --border-radius-6xl: 5rem;
+}
+
+:root {
+  --astro-code-color-text: var(--color-base-50);
+  --astro-code-background: var(--color-base-900);
+  --astro-code-token-constant: var(--color-accent-300);
+  --astro-code-token-string: var(--color-base-400);
+  --astro-code-token-comment: var(--color-base-50);
+  --astro-code-token-keyword: var(--color-base-500);
+  --astro-code-token-parameter: var(--color-base-50);
+  --astro-code-token-function: theme(textColor.pink.500);
+  --astro-code-token-string-expression: theme(textColor.pink.400);
+  --astro-code-token-punctuation: var(--color-base-50);
+  --astro-code-token-link: var(--color-base-50);
+}

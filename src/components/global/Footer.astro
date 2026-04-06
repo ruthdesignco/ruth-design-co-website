@@ -1,0 +1,43 @@
+---
+// Assets
+import Logo from "@/components/assets/Logo.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+const links = [
+  { label: "Work", href: "/work" },
+  { label: "Approach", href: "/#approach" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<footer class="bg-[#0a0a09]">
+  <Wrapper variant="standard" class="pt-24 pb-12">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-12 md:gap-0">
+      <div class="flex flex-col gap-3">
+        <a href="/" class="flex items-center gap-2.5">
+          <Logo class="h-6 text-accent-500" />
+          <span class="text-sm font-sans font-medium text-[#f0ede8] tracking-tight">Ruth Design Co.</span>
+        </a>
+        <p class="text-xs font-sans font-light text-base-600">AI Strategy & Product Design</p>
+      </div>
+
+      <nav class="flex flex-col md:flex-row gap-4 md:gap-8">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-sans font-normal text-base-400 hover:text-accent-500 transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    <div class="border-t border-white/[0.08] mt-16 pt-8">
+      <p class="text-xs font-sans font-light text-base-600">
+        © 2026 Ruth Design Co. All rights reserved.
+      </p>
+    </div>
+  </Wrapper>
+</footer>

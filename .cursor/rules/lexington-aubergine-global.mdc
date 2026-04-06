@@ -1,0 +1,14 @@
+---
+description: Global conventions for Lexington Aubergine — imports, fundations folder, minimal diffs
+alwaysApply: true
+---
+
+# Lexington Aubergine — global rules
+
+- **Publisher:** Lexington Themes (https://lexingtonthemes.com/). Theme docs/support URLs match `README.md` (documentation, changelog for aubergine, support).
+- **Package:** `@lexington/aubergine` — scoped to this repo only; do not assume other Lexington templates’ file layout.
+- **Imports:** Prefer `@/` aliases (`tsconfig` maps `@/*` → `src/*`). Keep import grouping style used in existing `.astro` files (foundations/fundations, components, layouts).
+- **Folder spelling:** Use `src/components/fundations/` exactly (intentional spelling, not `foundations`). Never rename it; imports and paths break.
+- **UI primitives:** Reuse `src/components/fundations/` (`elements/`, `containers/`, `head/`, `icons/`, `scripts/`) and global components before adding parallel abstractions.
+- **Diff discipline:** Minimal, task-focused changes. Do not widen content Zod schemas without updating every consumer (`layouts/*`, cards, pages using `entry.data`).
+- **Dependencies:** Only add packages if they appear in an agreed task; do not invent features that aren’t backed by `package.json` and existing patterns.

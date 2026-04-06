@@ -1,0 +1,172 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const pricingPlans = [
+  {
+    title: "Monthly",
+    price: "$7,999/m",
+    description: "Pause or cancel anytime.",
+   
+    buttonLink: "#_",
+    features: [
+      { name: "Unique one-page website design", available: true },
+      { name: "Figma desktop & mobile designs", available: true },
+      { name: "Figma file & styleguide", available: true },
+      { name: "Video guide & overview", available: true },
+      { name: "Hand-over support", available: true },
+      { name: "Slack access", available: true },
+      { name: "Live one-page website", available: false },
+      { name: "Fully responsive", available: false },
+      { name: "Subtle interactions", available: false },
+      { name: "14 day post-launch support", available: false },
+    ],
+    classes:
+      "shadow-big flex flex-col p-8 rounded-3xl bg-gradient-to-tr from-indigo-500 via-indigo-400 to-indigo-300",
+    textClasses: "text-base-950",
+    buttonVariant: "muted",
+  },
+  {
+    title: "Quarterly",
+    price: "$15,499/m",
+    description: "Save half per month.",
+    
+    buttonLink: "#_",
+    features: [
+      { name: "Unique one-page website design", available: true },
+      { name: "Figma desktop & mobile designs", available: true },
+      { name: "Figma file & styleguide", available: true },
+      { name: "Video guide & overview", available: true },
+      { name: "Hand-over support", available: true },
+      { name: "Slack access", available: true },
+      { name: "Live one-page website", available: true },
+      { name: "Fully responsive", available: true },
+      { name: "Subtle interactions", available: true },
+      { name: "14 day post-launch support", available: false },
+    ],
+    classes:
+      "flex flex-col p-8 rounded-3xl bg-base-900 ring-1 ring-base-800 shadow-big",
+    textClasses: "text-white",
+    buttonVariant: "accent",
+  },
+  {
+    title: "Yearly",
+    price: "$30,999/m",
+    description: "Save a lot per month.",
+    
+    buttonLink: "#_",
+    features: [
+      { name: "Unique one-page website design", available: true },
+      { name: "Figma desktop & mobile designs", available: true },
+      { name: "Figma file & styleguide", available: true },
+      { name: "Video guide & overview", available: true },
+      { name: "Hand-over support", available: true },
+      { name: "Slack access", available: true },
+      { name: "Live one-page website", available: true },
+      { name: "Fully responsive", available: true },
+      { name: "Subtle interactions", available: true },
+      { name: "14 day post-launch support", available: true },
+    ],
+    classes:
+      "flex flex-col p-8 rounded-3xl bg-base-900 ring-1 ring-base-800 shadow-big",
+    textClasses: "text-white",
+    buttonVariant: "accent",
+  },
+];
+---
+
+<section id="pricing" class="scroll-mt-20">
+  <Wrapper variant="standard" class="py-24">
+    <div
+      class="lg:text-center max-w-xl lg:mx-auto"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
+      <Text tag="h3" variant="displayXL" class="text-white font-display"
+        >Memberships levels</Text
+      >
+      <Text tag="p" variant="textBase" class="text-base-300 mt-4"
+        >Choose a plan that's right for you.</Text
+      >
+    </div>
+
+    <div class="mt-24 grid md:grid-cols-2 lg:grid-cols-3 gap-2">
+      {
+        pricingPlans.map((plan) => (
+          <div class={plan.classes}>
+            <div>
+              <Text
+                tag="p"
+                variant="textXL"
+                class={`flex items-baseline ${plan.textClasses}`}
+              >
+                {plan.title}
+              </Text>
+              <div class="pb-4 mt-8 border-b border-white/20">
+                <div class="flex flex-col items-baseline">
+                  <Text
+                    tag="p"
+                    variant="displayMD"
+                    class={`font-display font-medium  ${plan.textClasses}`}
+                  >
+                    {plan.price}
+                  </Text>
+                  <Text
+                    tag="p"
+                    variant="textBase"
+                    class={`mt-3 ${plan.textClasses}`}
+                  >
+                    {plan.description}
+                  </Text>
+                </div>
+              </div>
+              <div class="mt-8">
+                <Button
+                  size="lg"
+                  variant={plan.buttonVariant}
+                  class={plan.buttonVariant}
+                  href={plan.buttonLink}
+                  title={plan.title}
+                  aria-label={plan.title}
+                  class="w-full"
+                >
+                  Subscribe
+                </Button>
+              </div>
+              <ul class="order-last mt-10 flex flex-col gap-y-3 text-sm">
+                {plan.features.map((feature) => (
+                  <li
+                    class={`flex items-center gap-2 ${feature.available ? plan.textClasses : "opacity-50 text-white"}`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class={`icon icon-tabler icon-tabler-circle-${feature.available ? "check" : "x"}`}
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      stroke-width="1"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="12" cy="12" r="9" />
+                      {feature.available ? (
+                        <path d="M9 12l2 2l4 -4" />
+                      ) : (
+                        <path d="M10 10l4 4m0 -4l-4 4" />
+                      )}
+                    </svg>
+                    {feature.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Wrapper>
+</section>

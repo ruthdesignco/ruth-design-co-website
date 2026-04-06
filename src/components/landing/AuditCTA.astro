@@ -1,0 +1,30 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<section class="bg-[#0a0a09]">
+  <Wrapper variant="standard" class="py-32">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="2000">
+      <p class="text-xs font-sans font-normal uppercase tracking-widest text-accent-500 mb-6">
+        AI Clarity Audit
+      </p>
+      <Text tag="h2" variant="display2XL" class="text-[#f0ede8] font-display leading-snug">
+        Not sure where to start? Start with an AI Clarity Audit.
+      </Text>
+      <Text tag="p" variant="textLG" class="font-sans font-light text-[#a8a89f] leading-relaxed mt-8">
+        The AI Clarity Audit is a structured, time-boxed engagement designed to answer one question: where is the highest-leverage opportunity in your business for design and AI?
+      </Text>
+      <Text tag="p" variant="textLG" class="font-sans font-light text-[#a8a89f] leading-relaxed mt-4">
+        We study your product, your operations, and your goals — and deliver a prioritized roadmap with a working prototype of your top opportunity. Most clients use the Audit to align their leadership team and validate their direction before committing to a larger build. It's a defined scope, a fixed price, and a clear outcome. A good way to start.
+      </Text>
+      <div class="flex justify-center mt-10">
+        <Button href="/contact" size="lg" variant="accent" class="shadow-none whitespace-nowrap">
+          Schedule a conversation →
+        </Button>
+      </div>
+    </div>
+  </Wrapper>
+</section>

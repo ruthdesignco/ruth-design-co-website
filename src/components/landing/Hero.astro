@@ -1,0 +1,31 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<section>
+  <Wrapper variant="standard" class="pt-48 pb-32">
+    <div
+      class="max-w-3xl"
+      data-aos="fade-down"
+      data-aos-duration="1500"
+    >
+      <p class="text-xs font-sans font-normal uppercase tracking-widest text-accent-500 mb-6">
+        AI Strategy & Product Design
+      </p>
+      <Text tag="h1" variant="displayXL" class="text-[#f0ede8] font-display leading-tight">
+        We find your highest-leverage AI opportunities. Then we build them.
+      </Text>
+      <Text tag="p" variant="textLG" class="mt-6 text-base-400 font-sans font-light max-w-2xl leading-relaxed">
+        Ruth Design Co. works with founders and early-stage companies who have a product vision but no one on their team who thinks strategically about design and AI. We identify where the leverage is — and we ship the tools, systems, and foundations to capture it.
+      </Text>
+      <div class="mt-10 w-fit">
+        <Button href="/contact" size="lg" variant="accent" class="shadow-none"
+          >Start with an AI Clarity Audit →</Button
+        >
+      </div>
+    </div>
+  </Wrapper>
+</section>

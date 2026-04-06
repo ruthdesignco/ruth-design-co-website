@@ -1,0 +1,76 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+const services = [
+  {
+    number: "01",
+    name: "AI Clarity Audit",
+    description:
+      "The entry point for every engagement. A structured, time-boxed deep dive into your product, operations, and data — mapping the highest-leverage AI opportunities and delivering a prioritized roadmap with a working prototype. Most clients find this changes how they think about their roadmap entirely.",
+  },
+  {
+    number: "02",
+    name: "Design & Build",
+    description:
+      "We design and build — not one or the other. High-fidelity prototypes, custom AI tools, workflow automations, dashboards, and full product features. Everything is production-ready and handed off so your team can own it.",
+  },
+  {
+    number: "03",
+    name: "Fractional CDO",
+    description:
+      "For companies that need sustained design and AI leadership without the overhead of a full-time executive hire. We sit at the table with your leadership team, govern the design system, and make sure every product decision compounds toward your goals.",
+  },
+];
+---
+
+<section id="services" class="bg-[#111110] scroll-mt-24">
+  <Wrapper variant="standard" class="py-24">
+    <div data-aos="fade-up" data-aos-duration="2000">
+      <p class="text-xs font-sans font-normal uppercase tracking-widest text-accent-500 mb-6">
+        Services
+      </p>
+      <Text tag="h2" variant="displayMD" class="text-[#f0ede8] font-display">
+        Strategy through shipping.
+      </Text>
+      <Text
+        tag="p"
+        variant="textLG"
+        class="font-sans font-light text-[#a8a89f] leading-relaxed max-w-2xl mt-6"
+      >
+        We operate as a fractional design and AI leadership partner — not an agency, not a freelancer. One senior partner, embedded in your business, accountable for outcomes.
+      </Text>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+      {
+        services.map((service) => (
+          <div
+            class="bg-[#222220] rounded p-8"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
+            <p class="text-xs font-sans font-normal text-base-600 tracking-widest mb-6">
+              {service.number}
+            </p>
+            <Text
+              tag="h3"
+              variant="displaySM"
+              class="font-display text-[#f0ede8] leading-snug mb-4"
+            >
+              {service.name}
+            </Text>
+            <Text
+              tag="p"
+              variant="textBase"
+              class="font-sans font-light text-[#a8a89f] leading-relaxed"
+            >
+              {service.description}
+            </Text>
+          </div>
+        ))
+      }
+    </div>
+  </Wrapper>
+</section>

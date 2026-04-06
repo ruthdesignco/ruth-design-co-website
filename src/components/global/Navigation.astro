@@ -1,0 +1,141 @@
+---
+// Assets
+import Logo from "@/components/assets/Logo.astro";
+// Fundations
+import Button from "@/components/fundations/elements/Button.astro";
+// Icons
+import Menu from "@/components/fundations/icons/Menu.astro";
+
+const navLinks = [
+  { label: "Work", href: "/work" },
+  { label: "Approach", href: "/#approach" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<div id="nav-wrapper" class="fixed inset-x-0 z-50 top-2 lg:top-8">
+  <div
+    id="nav-container"
+    class="max-w-3xl mx-auto transition-all duration-700 ease-in-out"
+  >
+    <div
+      id="nav-pill"
+      class="relative flex flex-col w-full px-5 py-3 mx-auto border backdrop-blur-xl backdrop-filter bg-[#0a0a09]/80 border-white/[0.08] md:flex-row md:items-center md:justify-between rounded"
+    >
+      <div class="flex flex-row items-center justify-between md:justify-start">
+        <a href="/" aria-label="Homepage" class="flex items-center gap-2.5">
+          <Logo class="h-6 text-accent-500" />
+          <span class="text-sm font-sans font-medium text-[#f0ede8] tracking-tight whitespace-nowrap">Ruth Design Co.</span>
+        </a>
+
+        <Button
+          iconOnly
+          size="sm"
+          variant="muted"
+          id="nav-toggle"
+          class="md:hidden"
+          aria-label="Toggle navigation menu"
+        >
+          <Menu slot="icon" size="base" />
+        </Button>
+      </div><nav
+        id="nav-menu"
+        class="flex-col justify-center hidden py-12 md:flex-row md:flex md:items-center md:py-0 flex-1 md:justify-center"
+      >
+        <ul
+          class="items-center justify-center text-center list-none gap-y-6 md:gap-8 flex flex-col md:flex-row md:text-left"
+        >
+          {
+            navLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm font-sans font-normal text-base-400 hover:text-accent-500 transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <div class="hidden md:flex md:items-center md:shrink-0">
+        <Button
+          size="md"
+          variant="accent"
+          href="/contact"
+          class="shadow-none whitespace-nowrap"
+          >Start an Audit →</Button
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navContainer = document.getElementById("nav-container");
+    const navPill = document.getElementById("nav-pill");
+    const navToggle = document.getElementById("nav-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    const iconMenu = document.getElementById("icon-menu");
+    const iconClose = document.getElementById("icon-close");
+
+    let isOpen = false;
+
+    // Handle scroll behavior
+    window.addEventListener("scroll", () => {
+      const atTop = window.pageYOffset <= 50;
+      if (navContainer) {
+        if (atTop) {
+          navContainer.classList.remove("max-w-7xl");
+          navContainer.classList.add("max-w-3xl");
+        } else {
+          navContainer.classList.remove("max-w-2xl");
+          navContainer.classList.add("max-w-7xl");
+        }
+      }
+      if (navPill) {
+        if (atTop) {
+          navPill.classList.remove("px-8");
+          navPill.classList.add("px-5");
+        } else {
+          navPill.classList.add("px-8");
+          navPill.classList.remove("px-5");
+        }
+      }
+    });
+
+    // Handle mobile menu toggle
+    if (navToggle) {
+      navToggle.addEventListener("click", () => {
+        isOpen = !isOpen;
+
+        if (navMenu) {
+          if (isOpen) {
+            navMenu.classList.remove("hidden");
+            navMenu.classList.add("flex");
+          } else {
+            navMenu.classList.add("hidden");
+            navMenu.classList.remove("flex");
+          }
+        }
+
+        if (iconMenu && iconClose) {
+          if (isOpen) {
+            iconMenu.classList.add("hidden");
+            iconMenu.classList.remove("inline-flex");
+            iconClose.classList.remove("hidden");
+            iconClose.classList.add("inline-flex");
+          } else {
+            iconMenu.classList.remove("hidden");
+            iconMenu.classList.add("inline-flex");
+            iconClose.classList.add("hidden");
+            iconClose.classList.remove("inline-flex");
+          }
+        }
+      });
+    }
+  });
+</script>
