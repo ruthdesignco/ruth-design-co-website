@@ -12,15 +12,27 @@ const services = [
   },
   {
     number: "02",
-    name: "Design & Build",
+    name: "Establish Design DNA",
     description:
-      "We design and build — not one or the other. High-fidelity prototypes, custom AI tools, workflow automations, dashboards, and full product features. Everything is production-ready and handed off so your team can own it.",
+      "Before anything gets built, we establish the design foundation — the principles, visual language, and system logic that ensure every touchpoint feels like a single, premium ecosystem. This is the work that makes everything that follows coherent.",
   },
   {
     number: "03",
-    name: "Fractional CDO",
+    name: "Product Strategy & Build",
     description:
-      "For companies that need sustained design and AI leadership without the overhead of a full-time executive hire. We sit at the table with your leadership team, govern the design system, and make sure every product decision compounds toward your goals.",
+      "We lead the design and build of your product from the top — overseeing and reviewing the entire process with decades of design and technology experience and judgment. The right decisions get made at every stage, and what ships matches the vision.",
+  },
+  {
+    number: "04",
+    name: "AI Systems & Tooling",
+    description:
+      "Custom AI tools, workflow automations, and agent deployments built directly into your operations — not bolted on after the fact. We identify the highest-value automation opportunities and build them to production quality.",
+  },
+  {
+    number: "05",
+    name: "Executive Design Leadership",
+    description:
+      "For companies that need sustained design and AI leadership without the overhead of a full-time executive hire. We provide a fractional Chief Design Officer — embedded in your leadership team, governing the design system, and ensuring every product decision compounds toward your goals.",
   },
 ];
 ---
@@ -43,34 +55,65 @@ const services = [
       </Text>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-      {
-        services.map((service) => (
-          <div
-            class="bg-[#222220] rounded p-8"
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            <p class="text-xs font-sans font-normal text-base-600 tracking-widest mb-6">
-              {service.number}
-            </p>
-            <Text
-              tag="h3"
-              variant="displaySM"
-              class="font-display text-[#f0ede8] leading-snug mb-4"
+    <div class="mt-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {
+          services.slice(0, 3).map((service) => (
+            <div
+              class="bg-[#222220] rounded p-8"
+              data-aos="fade-up"
+              data-aos-duration="2000"
             >
-              {service.name}
-            </Text>
-            <Text
-              tag="p"
-              variant="textBase"
-              class="font-sans font-light text-[#a8a89f] leading-relaxed"
+              <p class="text-xs font-sans font-normal text-base-600 tracking-widest mb-6">
+                {service.number}
+              </p>
+              <Text
+                tag="h3"
+                variant="displaySM"
+                class="font-display text-[#f0ede8] leading-snug mb-4"
+              >
+                {service.name}
+              </Text>
+              <Text
+                tag="p"
+                variant="textBase"
+                class="font-sans font-light text-[#a8a89f] leading-relaxed"
+              >
+                {service.description}
+              </Text>
+            </div>
+          ))
+        }
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:w-2/3 md:mx-auto">
+        {
+          services.slice(3).map((service) => (
+            <div
+              class="bg-[#222220] rounded p-8"
+              data-aos="fade-up"
+              data-aos-duration="2000"
             >
-              {service.description}
-            </Text>
-          </div>
-        ))
-      }
+              <p class="text-xs font-sans font-normal text-base-600 tracking-widest mb-6">
+                {service.number}
+              </p>
+              <Text
+                tag="h3"
+                variant="displaySM"
+                class="font-display text-[#f0ede8] leading-snug mb-4"
+              >
+                {service.name}
+              </Text>
+              <Text
+                tag="p"
+                variant="textBase"
+                class="font-sans font-light text-[#a8a89f] leading-relaxed"
+              >
+                {service.description}
+              </Text>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </Wrapper>
 </section>
