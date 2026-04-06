@@ -4,7 +4,7 @@ const logos = [
   { src: "/logos/NFL_Symbol_1.png", alt: "NFL" },
   { src: "/logos/Apple_Music_Logo_1.png", alt: "Apple Music" },
   { src: "/logos/Google_Logo_1.png", alt: "Google" },
-  { src: "/logos/Meta_idlf4cVSsS_1.png", alt: "Meta" },
+  { src: "/logos/Meta_idlf4cVSsS_1.png", alt: "Meta", height: "40px" },
   { src: "/logos/McKinsey___Company_idXaAYJuer_1.png", alt: "McKinsey & Company" },
   { src: "/logos/Medtronic_idOf910Br8_1.png", alt: "Medtronic" },
   { src: "/logos/Samsung_idkTmfps1i_1.png", alt: "Samsung" },
@@ -22,7 +22,7 @@ const logos = [
             <img
               src={logo.src}
               alt={logo.alt}
-              style="height:24px;width:auto;filter:brightness(0) invert(1);opacity:0.5;"
+              style={`height:${logo.height ?? "24px"};width:auto;filter:brightness(0) invert(1);opacity:0.5;`}
             />
           </div>
         ))}
