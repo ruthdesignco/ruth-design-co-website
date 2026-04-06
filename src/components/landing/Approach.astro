@@ -2,39 +2,6 @@
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-
-const bullets = [
-  {
-    label: "AI Clarity Audit",
-    description:
-      "A rapid AI audit that maps your highest-leverage opportunities before a single line of code is written.",
-  },
-  {
-    label: "Design system",
-    description:
-      "A ground-up design system that gives your engineering team a shared language and eliminates rework.",
-  },
-  {
-    label: "AI tooling",
-    description:
-      "Custom AI tooling built directly into your workflows — not bolted on after the fact.",
-  },
-  {
-    label: "Architecture review",
-    description:
-      "A product architecture review before a major platform migration.",
-  },
-  {
-    label: "Fractional CDO",
-    description:
-      "Leadership embedded in your leadership team on an ongoing basis.",
-  },
-  {
-    label: "Prototype sprint",
-    description:
-      "A sprint to validate a product bet before committing to full development.",
-  },
-];
 ---
 
 <section id="approach" class="bg-[#111110]">
@@ -44,34 +11,38 @@ const bullets = [
         Approach
       </p>
       <Text tag="h2" variant="displayMD" class="text-[#f0ede8] font-display">
-        Every engagement is different. The discipline isn't.
+        Design is moving upstream. We've always been there.
       </Text>
-      <Text
-        tag="p"
-        variant="textLG"
-        class="font-sans font-light text-base-400 leading-relaxed max-w-2xl mt-6"
-      >
-        We don't apply a fixed playbook to every client. Before we propose anything, we study your business — your product, your team, your market, and where the real friction lives. From that foundation, we design a phased engagement custom to what you actually need.
-      </Text>
-
-      <ul class="mt-12 space-y-6 max-w-2xl">
-        {bullets.map((bullet) => (
-          <li class="flex gap-4">
-            <span class="text-accent-500 font-sans font-light text-lg leading-relaxed shrink-0">—</span>
-            <p class="font-sans text-base leading-relaxed text-base-400 font-light">
-              <span class="text-[#f0ede8] font-medium">{bullet.label} — </span>{bullet.description}
-            </p>
-          </li>
-        ))}
-      </ul>
-
-      <Text
-        tag="p"
-        variant="textLG"
-        class="font-sans font-light text-base-400 leading-relaxed max-w-2xl mt-10"
-      >
-        What every engagement shares: a clear diagnosis before any prescription, deliverable-based milestones rather than open-ended hours, and a close that leaves your team more capable than when we started — not dependent on us to keep things running.
-      </Text>
+      <div class="max-w-2xl mt-6 space-y-6">
+        <Text
+          tag="p"
+          variant="textLG"
+          class="font-sans font-light text-base-400 leading-relaxed"
+        >
+          AI is changing where design happens. Execution is getting faster, cheaper, and increasingly automated. What it can't replace is judgment — knowing which problems are worth solving, which opportunities are hiding in plain sight, and how to sequence the work so it compounds.
+        </Text>
+        <Text
+          tag="p"
+          variant="textLG"
+          class="font-sans font-light text-base-400 leading-relaxed"
+        >
+          That's always been the highest-leverage part of this work. We've just built a firm around it.
+        </Text>
+        <Text
+          tag="p"
+          variant="textLG"
+          class="font-sans font-light text-base-400 leading-relaxed"
+        >
+          Every engagement starts the same way: we get close to your business before we touch your product. We study the workflows, follow the data, talk to the people running it. The diagnosis comes before the prescription — and what that looks like is different every time.
+        </Text>
+        <Text
+          tag="p"
+          variant="textLG"
+          class="font-sans font-light text-base-400 leading-relaxed"
+        >
+          What never changes: we don't sell you a process. We solve your problem.
+        </Text>
+      </div>
     </div>
   </Wrapper>
 </section>
