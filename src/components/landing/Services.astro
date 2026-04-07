@@ -6,30 +6,36 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 const services = [
   {
     number: "01",
+    name: "Design Intelligence Audit",
+    description:
+      "Before we design anything, we learn everything. We conduct a comprehensive audit of your competitive landscape — then build an automated monitoring system that tracks competitor moves in real time, so you're never caught off guard. We facilitate design thinking workshops that bring diverse perspectives into the room to surface the gaps and friction points in your product and experience. And we map the full user journey — not as a deliverable, but as a living north star that guides every product and design decision that follows.",
+  },
+  {
+    number: "02",
     name: "AI Clarity Audit",
     description:
       "The entry point for every engagement. A structured, time-boxed deep dive into your product, operations, and data — mapping the highest-leverage AI opportunities and delivering a prioritized roadmap with a working prototype. Most clients find this changes how they think about their roadmap entirely.",
   },
   {
-    number: "02",
+    number: "03",
     name: "Establish Design DNA",
     description:
       "Before anything gets built, we establish the design foundation — the principles, visual language, and system logic that ensure every touchpoint feels like a single, premium ecosystem. This is the work that makes everything that follows coherent.",
   },
   {
-    number: "03",
+    number: "04",
     name: "Product Strategy & Build",
     description:
       "We are capable of leading the design and build of any new product or feature from the top — overseeing and reviewing the entire process with decades of design and technology experience and judgment. The right decisions get made at every stage, and what ships matches the vision.",
   },
   {
-    number: "04",
+    number: "05",
     name: "AI Workflow Design",
     description:
       "Custom AI tools, workflow automations, and agent deployments built directly into your operations — not bolted on after the fact. We identify the highest-value automation opportunities and build them to production quality.",
   },
   {
-    number: "05",
+    number: "06",
     name: "Executive Design Leadership",
     description:
       "Most early-stage companies have a founder, a finance lead, and a sales function. Almost none have someone responsible for how the business looks, communicates, and presents itself — across investors, customers, employees, and vendors. That's what a Chief Design Officer does. We provide that function on a fractional basis, so you get the strategic leadership without the full-time executive overhead.",
@@ -85,7 +91,7 @@ const services = [
           ))
         }
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:w-2/3 md:mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         {
           services.slice(3).map((service) => (
             <div
