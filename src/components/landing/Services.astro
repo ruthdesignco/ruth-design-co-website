@@ -6,39 +6,27 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 const services = [
   {
     number: "01",
-    name: "Design Intelligence Audit",
+    name: "AI Clarity Audit",
     description:
-      "Before we design anything, we learn everything. We conduct a comprehensive audit of your competitive landscape — then build an automated monitoring system that tracks competitor moves in real time, so you're never caught off guard. We facilitate design thinking workshops that bring diverse perspectives into the room to surface the gaps and friction points in your product and experience. And we map the full user journey — not as a deliverable, but as a living north star that guides every product and design decision that follows.",
+      "A structured, time-boxed engagement to map your highest-leverage AI opportunities and deliver a prioritized roadmap. The entry point for most engagements.",
   },
   {
     number: "02",
-    name: "AI Clarity Audit",
+    name: "Design DNA & Executive Leadership",
     description:
-      "A structured, time-boxed deep dive into your product, operations, and data — mapping the highest-leverage AI opportunities and delivering a prioritized roadmap. The goal isn't just a better plan. It's a fundamental shift in how your company thinks — toward an AI-first mindset that embraces what's now possible and builds toward it intentionally.",
+      "We establish the design foundation — principles, visual language, and system logic — that makes every touchpoint feel like a single, premium ecosystem. Available as a defined engagement or on a fractional basis.",
   },
   {
     number: "03",
-    name: "Establish Design DNA",
+    name: "Product Strategy & Build",
     description:
-      "Before anything gets built, we establish the design foundation — the principles, visual language, and system logic that ensure every touchpoint feels like a single, premium ecosystem. This is the work that makes everything that follows coherent.",
+      "We lead the design and build of any new product or feature, from the top — overseeing and reviewing the entire process with decades of design and technology experience and judgment.",
   },
   {
     number: "04",
-    name: "Product Strategy & Build",
-    description:
-      "We are capable of leading the design and build of any new product or feature from the top — overseeing and reviewing the entire process with decades of design and technology experience and judgment. The right decisions get made at every stage, and what ships matches the vision.",
-  },
-  {
-    number: "05",
     name: "AI Workflow Design",
     description:
-      "Custom AI tools, workflow automations, and agent deployments built directly into your operations — not bolted on after the fact. We identify the highest-value automation opportunities and build them to production quality.",
-  },
-  {
-    number: "06",
-    name: "Executive Design Leadership",
-    description:
-      "Most early-stage companies have a founder, a finance lead, and a sales function. Almost none have someone responsible for how the business looks, communicates, and presents itself — across investors, customers, employees, and vendors. That's what a Chief Design Officer does. We provide that function on a fractional basis, so you get the strategic leadership without the full-time executive overhead.",
+      "Custom-fit tools, workflow automations, and agent deployments built directly into your operations — not bolted on after the fact.",
   },
 ];
 ---
@@ -50,50 +38,21 @@ const services = [
         Services
       </p>
       <Text tag="h2" variant="displayMD" class="text-[#f0ede8] font-display">
-        The strategic design partner your team is missing.
+        One partner, embedded and ongoing.
       </Text>
       <Text
         tag="p"
         variant="textLG"
         class="font-sans font-light text-[#a8a89f] leading-relaxed max-w-2xl mt-6"
       >
-        We operate as a fractional design and AI leadership partner — not an agency, not a freelancer. One senior partner, embedded in your business, accountable for outcomes.
+        The shape of every engagement is formed around the business and its unique problems.
       </Text>
     </div>
 
     <div class="mt-16">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
-          services.slice(0, 3).map((service) => (
-            <div
-              class="bg-[#222220] rounded p-8"
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              <p class="text-xs font-sans font-normal text-base-600 tracking-widest mb-6">
-                {service.number}
-              </p>
-              <Text
-                tag="h3"
-                variant="displaySM"
-                class="font-display text-[#f0ede8] leading-snug mb-4"
-              >
-                {service.name}
-              </Text>
-              <Text
-                tag="p"
-                variant="textBase"
-                class="font-sans font-light text-[#a8a89f] leading-relaxed"
-              >
-                {service.description}
-              </Text>
-            </div>
-          ))
-        }
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-        {
-          services.slice(3).map((service) => (
+          services.map((service) => (
             <div
               class="bg-[#222220] rounded p-8"
               data-aos="fade-up"

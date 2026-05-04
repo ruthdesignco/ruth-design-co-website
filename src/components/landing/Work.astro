@@ -5,24 +5,28 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 
 const work = [
   {
-    client: "Walmart",
-    headline: "Enterprise AI pattern development and governance at scale",
+    id: "walmart",
+    // visualLabel: shown inside the card image
+    visualLabel: "Enterprise AI platform development & governance",
+    outcome: "Built the foundation for how Walmart merchants deploy AI agents.",
     description:
-      "We led the design of agentic AI patterns and frameworks for Walmart's merchandising and supplier organization — establishing, testing, and validating the design standards that were eventually adopted company-wide. As AI agents proliferated across business units, Walmart needed a coherent system rather than a patchwork of individual deployments. Our work became the foundation: the governance frameworks, guardrails, and protocol infrastructure that now allows individual employees to spin up and deploy agents at scale across one of the largest retail operations in the world.",
+      "We led the design of AI patterns and frameworks for Walmart's merchandising and supplier organization. The work became the foundation for the governance frameworks, guardrails, and protocol infrastructure that now allow individual employees to spin up and deploy agents at scale across one of the largest retail operations in the world.",
   },
   {
-    client: "McKinsey & Company / Medtronic",
-    headline: "Redesigning the surgical planning experience for a global MedTech leader",
+    id: "medtronic",
+    visualLabel: "McKinsey & Company / Medtronic — Surgical platform redesign",
+    outcome: "Unified the clinical workflow for a global MedTech leader's surgical planning platform.",
+    description:
+      "Fragmented communication and disjointed data systems were creating friction at every step of Medtronic's Surgeon Hub platform. We led all design efforts — research across 19 surgeons and lab engineers, journey mapping, and high-fidelity prototyping — delivering a mobile-first redesign that reduced cognitive load and established the UX architecture for platform scaling.",
     caseStudyHref: "https://drive.google.com/file/d/1T85iEe-A5JBrOwEX9lAPPo9cRjhIzvWY/view?usp=drive_link",
-    description:
-      "Medtronic's Surgeon Hub platform supported complex spinal surgical planning across surgeons, lab engineers, and OR staff — but fragmented communication, poor mobile performance, and disjointed data systems were creating friction at every step of the care continuum. Working embedded within a McKinsey engagement team, we led all design efforts: qualitative research across 13 surgeons and 6 lab engineers at academic hospitals, private practices, and large hospital systems; client ideation workshops; journey mapping across the full pre-op to post-op arc; and high-fidelity prototyping through to a tested, approved UI. The result was a mobile-first redesign of Surgeon Hub that unified the clinical workflow, reduced cognitive load for front-line staff, and established the UX and design system architecture to support platform scaling.",
   },
   {
-    client: "McKinsey & Company / Teck Resources Limited",
-    headline: "Building an AI maintenance advisor for a major mining operation",
-    caseStudyHref: "/Case%20Studies/Case%20Studies%20-%20Teck%20Mining.pdf",
+    id: "teck",
+    visualLabel: "McKinsey & Company / Teck Resources — Generative AI tool for industrial operations",
+    outcome: "An AI strategy and toolset for mine equipment maintenance workers.",
     description:
-      "A major generative AI use case: a conversational AI copilot for maintenance workers and technicians at a large-scale mining site, designed to reduce equipment downtime and eliminate the manual, fragmented workflows that slowed diagnosis and repair. Embedded as the design lead on a five-week McKinsey engagement, we owned the full design process — qualitative research with maintenance workers, supervisors, and operations personnel; journey mapping across awareness, diagnosis, logistics, and repair phases; internal ideation sessions with data scientists and engineers; and the design and prototyping of the AI tool interface itself. The proof of concept was presented to the board of directors and unanimously approved for development. It entered engineering in Q4 2023.",
+      "We designed a conversational AI copilot for maintenance workers at a large-scale mining site, built to reduce equipment downtime and eliminate fragmented diagnostic workflows. Embedded as design lead on a five-week engagement, we owned research, journey mapping, and interface prototyping — from shop floor to boardroom presentation.",
+    caseStudyHref: "/Case%20Studies/Case%20Studies%20-%20Teck%20Mining.pdf",
   },
 ];
 ---
@@ -38,31 +42,95 @@ const work = [
       </Text>
     </div>
 
-    <div class="mt-16 border-t border-white/[0.08]">
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
       {work.map((entry) => (
         <div
-          class="grid grid-cols-1 md:grid-cols-3 gap-16 py-12 border-b border-white/[0.08]"
+          class="bg-[#111110] rounded overflow-hidden flex flex-col"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <div class="md:col-span-1">
-            <h3 class="font-display text-xl text-[#f0ede8] leading-snug">
-              {entry.client}
-            </h3>
-            <p class="font-sans font-medium text-sm text-[#a8a89f] mt-2 leading-snug">
-              {entry.headline}
-            </p>
+
+          <!-- Card image area: logo + engagement label -->
+          <div
+            class="w-full aspect-[4/3] bg-[#111110] border-b border-white/[0.06] flex flex-col items-center justify-center"
+            style="padding: 10%;"
+          >
+
+            <!-- Logo — swap viewBox + inner paths when real assets are supplied -->
+            {entry.id === "walmart" && (
+              <svg
+                viewBox="0 0 200 40"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                style="height: 40px; width: auto; max-width: 100%; flex-shrink: 0; color: #ffffff;"
+                aria-label="Walmart"
+              >
+                <text x="100" y="30" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="700" letter-spacing="5" fill="currentColor">WALMART</text>
+              </svg>
+            )}
+
+            {entry.id === "medtronic" && (
+              <svg
+                viewBox="0 0 240 40"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                style="height: 40px; width: auto; max-width: 100%; flex-shrink: 0; color: #ffffff;"
+                aria-label="Medtronic"
+              >
+                <text x="120" y="30" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="700" letter-spacing="4" fill="currentColor">MEDTRONIC</text>
+              </svg>
+            )}
+
+            {entry.id === "teck" && (
+              <svg
+                viewBox="0 0 100 40"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                style="height: 40px; width: auto; max-width: 100%; flex-shrink: 0; color: #ffffff;"
+                aria-label="Teck Resources"
+              >
+                <text x="50" y="30" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="700" letter-spacing="5" fill="currentColor">TECK</text>
+              </svg>
+            )}
+
+            <!-- Engagement type label — same styling as former below-image metadata, accent-500 at full opacity -->
+            <!-- min-h-[5rem] at md reserves space for up to 4 wrapped lines, aligning labels across all three cards -->
+            <div class="mt-8 w-full flex items-start justify-center md:min-h-[5rem]">
+              <p class="font-sans text-xs uppercase tracking-widest text-base-600 text-center leading-relaxed">
+                {entry.visualLabel}
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Card body: headline + description only -->
+          <div class="p-8 flex flex-col flex-1">
+            <Text
+              tag="h3"
+              variant="displaySM"
+              class="font-display text-[#f0ede8] leading-snug mb-4"
+            >
+              {entry.outcome}
+            </Text>
+            <Text
+              tag="p"
+              variant="textBase"
+              class="font-sans font-light text-[#a8a89f] leading-relaxed flex-1"
+            >
+              {entry.description}
+            </Text>
             {entry.caseStudyHref && (
-              <a href={entry.caseStudyHref} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 font-sans text-sm text-accent-500 hover:underline">
+              <a
+                href={entry.caseStudyHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block mt-6 font-sans text-sm text-accent-500 hover:underline"
+              >
                 View case study →
               </a>
             )}
           </div>
-          <div class="md:col-span-2">
-            <p class="font-sans font-light text-base text-[#a8a89f] leading-relaxed">
-              {entry.description}
-            </p>
-          </div>
+
         </div>
       ))}
     </div>
