@@ -3,30 +3,24 @@
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 
-const services = [
+const engagements = [
   {
     number: "01",
-    name: "AI Analysis",
-    description:
-      "We use AI-powered tools to audit your digital presence, find where you're losing customers, and show you exactly how to fix it. This is how every engagement starts.",
+    name: "Clarity",
+    heading: "See where AI actually creates leverage.",
+    body: "A focused diagnostic engagement — where AI creates real leverage versus where it's hype, mapped to a clear decision about what to build and what to ignore. The low-risk way to experience the thinking before committing to more. Most engagements start here.",
   },
   {
     number: "02",
-    name: "AI-Powered Lead Capture",
-    description:
-      "Never miss another customer. We set up AI agents that respond to calls and inquiries instantly — 24/7 — so every lead gets captured, qualified, and booked before they call your competitor.",
+    name: "Vantage",
+    heading: "The full engagement including strategy and execution.",
+    body: "Senior AI and design leadership with hands-on execution — diagnosis, workflow design, and the build itself, delivered on a defined engagement. The leadership a full-time CDO brings, working in your business now instead of after a six-month hire.",
   },
   {
     number: "03",
-    name: "Website & Conversion Optimization",
-    description:
-      "We fix the things on your website that are costing you customers right now. Clear calls-to-action, online booking, mobile optimization, and search visibility — the basics that drive revenue.",
-  },
-  {
-    number: "04",
-    name: "AI Agents & Workflow Automation",
-    description:
-      "Custom AI agents built into your daily operations. We design systems that handle lead follow-ups, scheduling, inventory, supplier coordination, and customer communication automatically — so your business runs even when you're not watching it.",
+    name: "Partnership",
+    heading: "Ongoing leadership after the build ships.",
+    body: "For founders who want a senior design and AI partner on a standing basis once the core work is done. Continued strategic leadership as your company and its AI footprint keep growing — without a permanent executive hire.",
   },
 ];
 ---
@@ -35,50 +29,48 @@ const services = [
   <Wrapper variant="standard" class="py-24">
     <div data-aos="fade-up" data-aos-duration="2000">
       <p class="text-xs font-sans font-normal uppercase tracking-widest text-accent-500 mb-6">
-        Services
+        How we work
       </p>
       <Text tag="h2" variant="displayMD" class="text-[#f0ede8] font-display">
-        How we help local businesses grow.
+        Structured engagements, run on a repeatable method.
       </Text>
       <Text
         tag="p"
         variant="textLG"
         class="font-sans font-light text-[#a8a89f] leading-relaxed max-w-2xl mt-6"
       >
-        We bring Fortune 100 strategy and AI expertise to businesses that have never had access to it.
+        Most help comes split in two: strategists who hand you a deck and leave you to execute it, or builders who need someone else to tell them what to build. This is both in one place — the same senior judgment that diagnoses where AI creates real leverage also designs and ships the solution, so nothing gets lost in translation between the thinking and the doing.
       </Text>
     </div>
 
-    <div class="mt-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {
-          services.map((service) => (
-            <div
-              class="bg-[#222220] rounded p-8"
-              data-aos="fade-up"
-              data-aos-duration="2000"
+    <div class="mt-16 flex flex-col gap-6">
+      {
+        engagements.map((e) => (
+          <div
+            class="bg-[#222220] rounded p-8"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
+            <p class="text-xs font-sans font-normal text-base-600 tracking-widest mb-6">
+              {e.number} — {e.name}
+            </p>
+            <Text
+              tag="h3"
+              variant="displaySM"
+              class="font-display text-[#f0ede8] leading-snug mb-4"
             >
-              <p class="text-xs font-sans font-normal text-base-600 tracking-widest mb-6">
-                {service.number}
-              </p>
-              <Text
-                tag="h3"
-                variant="displaySM"
-                class="font-display text-[#f0ede8] leading-snug mb-4"
-              >
-                {service.name}
-              </Text>
-              <Text
-                tag="p"
-                variant="textBase"
-                class="font-sans font-light text-[#a8a89f] leading-relaxed"
-              >
-                {service.description}
-              </Text>
-            </div>
-          ))
-        }
-      </div>
+              {e.heading}
+            </Text>
+            <Text
+              tag="p"
+              variant="textBase"
+              class="font-sans font-light text-[#a8a89f] leading-relaxed"
+            >
+              {e.body}
+            </Text>
+          </div>
+        ))
+      }
     </div>
   </Wrapper>
 </section>
